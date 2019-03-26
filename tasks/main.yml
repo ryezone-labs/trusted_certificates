@@ -1,0 +1,10 @@
+---
+# tasks file for trusted_certificates
+- name: copy ldap certificate to trusted certs folder
+  copy:
+    src: "/opt/ansible/certificates/{{ top_level_domain }}.crt"
+    dest: "/usr/local/share/ca-certificates/{{ top_level_domain }}.crt"
+    mode: 0644
+
+- name: Update cert index
+  shell: /usr/sbin/update-ca-certificates
