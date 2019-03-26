@@ -8,5 +8,5 @@
   register: result
 
 - name: Update cert index
-  shell: /usr/sbin/update-ca-certificates
+  command: /usr/sbin/update-ca-certificates
   when: result | changed
