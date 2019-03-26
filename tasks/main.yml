@@ -5,6 +5,8 @@
     src: "/opt/ansible/certificates/{{ top_level_domain }}.crt"
     dest: "/usr/local/share/ca-certificates/{{ top_level_domain }}.crt"
     mode: 0644
+  register: result
 
 - name: Update cert index
   shell: /usr/sbin/update-ca-certificates
+  when: result | changed
