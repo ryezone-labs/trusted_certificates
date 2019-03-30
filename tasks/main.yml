@@ -6,7 +6,9 @@
     dest: "/usr/local/share/ca-certificates/{{ top_level_domain }}.crt"
     mode: 0644
   register: result
+  become: yes
 
 - name: Update cert index
   command: /usr/sbin/update-ca-certificates
   when: result | changed
+  become: yes
