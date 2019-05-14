@@ -10,5 +10,5 @@
 
 - name: Update cert index
   command: /usr/sbin/update-ca-certificates
-  when: result | changed
+  when: result is changed
   become: yes
