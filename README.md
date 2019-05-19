@@ -6,8 +6,8 @@ Installs trusted wildcard certificates.
 Requirements
 ------------
 
-Certificate must be pregenerated and stored on ansible controler server at
-`/opt/ansible/certificates/{{ top_level_domain }}.crt`
+Certificates must be pregenerated and stored on server at
+`/opt/ansible/certificates/public`
 
 Role Variables
 --------------
